@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
   //   Todos Section Start
   const sectionEl = document.createElement("section");
   sectionEl.classList.add("main_section");
+  const topContentEl = document.createElement("div");
+  topContentEl.classList.add("top_content");
   const inputEl = document.createElement("input");
   inputEl.setAttribute("type", "text");
   inputEl.setAttribute("placeholder", "Enter a new todo here...");
@@ -93,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const titleEl = document.createElement("strong");
       data[index].status == true && titleEl.classList.add("completed");
 
-      titleEl.innerText = data[index].title;
+      titleEl.innerText = `${data[index].title}`;
       const deleteBtn = document.createElement("button");
       deleteBtn.classList.add("delete_btn");
       deleteBtn.innerText = "Delete";
@@ -161,7 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   asideEl.append(logoEL, filterBoxEL, clearAllBtn);
-  sectionEl.append(inputEl, ulEl);
+  topContentEl.append(inputEl, addBtn);
+  sectionEl.append(topContentEl, ulEl);
   inputEl.insertAdjacentElement("afterend", addBtn);
   containerEl.append(asideEl, sectionEl);
 });

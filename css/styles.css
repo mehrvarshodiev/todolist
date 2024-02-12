@@ -10,7 +10,6 @@
   margin: 0 auto;
   position: relative;
   display: flex;
-  background: #002;
 }
 
 .sidebar {
@@ -91,7 +90,14 @@
   padding: 2rem;
   text-align: center;
 }
-
+.top_content {
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
 input[type="text"],
 .add_btn {
   font-size: 1.3rem;
@@ -104,8 +110,7 @@ input[type="text"],
 }
 
 input[type="text"] {
-  width: 100%;
-  max-width: 490px;
+  width: 85%;
   border-right: none;
   border-radius: 0.4rem 0 0 0.4rem;
   padding: 1rem;
@@ -122,6 +127,8 @@ input[type="text"].active:focus::placeholder {
 }
 
 .add_btn {
+  flex-shrink: 0;
+  max-width: 20%;
   text-transform: uppercase;
   padding: 1rem 2rem;
   border-left: none;
@@ -146,7 +153,7 @@ input[type="text"].active:focus ~ .add_btn {
 .todo_content {
   display: block;
   width: 100%;
-  max-width: 630px;
+  max-width: 530px;
   margin: 0 auto;
   list-style: none;
   height: 600px;
